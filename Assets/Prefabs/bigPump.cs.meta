@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 83519b647efdf449aaeddb4f42ac1410
+guid: c3516991b2f82471fac3617b45abf378
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - groundCheck: {instanceID: 0}
   - bigPumpkin: {fileID: 6422381254985438328, guid: 08779ce45334e4ce0aed4902fb8354f3, type: 3}
   - roundPumpkin: {fileID: 2016885299124319096, guid: 26fbb7e34a85741f6ae705e62f28a834, type: 3}
   executionOrder: 0

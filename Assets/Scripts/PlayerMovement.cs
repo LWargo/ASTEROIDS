@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
@@ -14,10 +15,16 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
     private bool isFacingRight = true;
     // Start is called before the first frame update
+    private bool win = false;
+    public GameObject bigPumpkin;
+    public GameObject roundPumpkin;
     void Start()
     {
         //Debug.Log("Hello world! " + speed);
         rb = GetComponent<Rigidbody2D>();
+
+            SpawnBigPump();
+
     }
 
     // Update is called once per frame
@@ -69,4 +76,35 @@ public class PlayerMovement : MonoBehaviour
         localScale.x *= -1;
         transform.localScale = localScale;
     }
+
+    void SpawnBigPump(){
+            Debug.Log("Here comes a pumpkin!");
+            for(int i =0; i <5; i++){
+                Instantiate(bigPumpkin,
+                new Vector3(Random.Range(-9.0f, 9.0f),
+                Random.Range(6.0f, 6.0f),0),
+                Quaternion.Euler(0,0,Random.Range(0.0f, 0.0f)));
+                StartCoroutine(pumpCycle());
+            }
+    }
+    IEnumerator pumpCycle(){
+        yield return new WaitForSeconds(4);
+    }
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.CompareTag("bigPumpkin")){
+            Debug.Log("VANISH");
+            Destroy(gameObject);
+        }
+    
+    }
+
+    
+    //DR HORN HELP
+    //TIMER ISN'T WORKING
+    //JUMP ISN'T WORKING
+    
 }
+
+
+
+
