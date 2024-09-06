@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
             SpawnBigPump();
+            SpawnRoundPump();
 
     }
 
@@ -87,16 +88,26 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(pumpCycle());
             }
     }
+    void SpawnRoundPump(){
+            Debug.Log("Here comes a pumpkin!");
+            for(int i =0; i <5; i++){
+                Instantiate(roundPumpkin,
+                new Vector3(Random.Range(-9.0f, 9.0f),
+                Random.Range(6.0f, 6.0f),0),
+                Quaternion.Euler(0,0,Random.Range(0.0f, 0.0f)));
+                StartCoroutine(pumpCycle());
+            }
+    }
     IEnumerator pumpCycle(){
         yield return new WaitForSeconds(4);
     }
     private void OnCollisionEnter2D(Collision2D other) {
-        if(other.gameObject.CompareTag("bigPumpkin")){
+        if((other.gameObject.CompareTag("bigPumpkin"))||(other.gameObject.CompareTag("roundPumpkin"))){
             Debug.Log("VANISH");
             Destroy(gameObject);
-        }
-    
+        } 
     }
+   
 
     
     //DR HORN HELP

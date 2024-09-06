@@ -257,6 +257,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Round Pumpkin
       objectReference: {fileID: 0}
+    - target: {fileID: 2016885299124319096, guid: 26fbb7e34a85741f6ae705e62f28a834, type: 3}
+      propertyPath: m_TagString
+      value: roundPumpkin
+      objectReference: {fileID: 0}
     - target: {fileID: 2863894178802468514, guid: 26fbb7e34a85741f6ae705e62f28a834, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.06

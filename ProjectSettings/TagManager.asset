@@ -6,6 +6,7 @@ TagManager:
   tags:
   - bigPumpkin
   - platform
+  - roundPumpkin
   layers:
   - Default
   - TransparentFX

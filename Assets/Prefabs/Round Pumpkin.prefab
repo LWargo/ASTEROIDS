@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 8181547921793402822}
   - component: {fileID: 7277143588863598626}
   - component: {fileID: -83637406497584984}
+  - component: {fileID: 2689549612292779942}
   m_Layer: 0
   m_Name: Round Pumpkin
-  m_TagString: Untagged
+  m_TagString: roundPumpkin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -340,4 +341,19 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &2689549612292779942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016885299124319096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3516991b2f82471fac3617b45abf378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bigPumpkin: {fileID: 6422381254985438328, guid: 08779ce45334e4ce0aed4902fb8354f3, type: 3}
+  roundPumpkin: {fileID: 2016885299124319096}
+  platform: {fileID: 0}
