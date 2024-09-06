@@ -23,8 +23,8 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log("Hello world! " + speed);
         rb = GetComponent<Rigidbody2D>();
 
-            SpawnBigPump();
-            SpawnRoundPump();
+            InvokeRepeating("SpawnBigPump", .5f, 2f);
+            InvokeRepeating("SpawnRoundPump", .5f, 2f);
 
     }
 
@@ -80,27 +80,29 @@ public class PlayerMovement : MonoBehaviour
 
     void SpawnBigPump(){
             Debug.Log("Here comes a pumpkin!");
-            for(int i =0; i <5; i++){
+            //for(int i =0; i <5; i++){
                 Instantiate(bigPumpkin,
                 new Vector3(Random.Range(-9.0f, 9.0f),
                 Random.Range(6.0f, 6.0f),0),
                 Quaternion.Euler(0,0,Random.Range(0.0f, 0.0f)));
-                StartCoroutine(pumpCycle());
-            }
+               // StartCoroutine(pumpCycle());
+           // }
     }
     void SpawnRoundPump(){
             Debug.Log("Here comes a pumpkin!");
-            for(int i =0; i <5; i++){
+          //  for(int i =0; i <5; i++){
                 Instantiate(roundPumpkin,
                 new Vector3(Random.Range(-9.0f, 9.0f),
                 Random.Range(6.0f, 6.0f),0),
                 Quaternion.Euler(0,0,Random.Range(0.0f, 0.0f)));
-                StartCoroutine(pumpCycle());
-            }
+              //  StartCoroutine(pumpCycle());
+           // }
     }
+    /*
     IEnumerator pumpCycle(){
         yield return new WaitForSeconds(4);
     }
+    */
     private void OnCollisionEnter2D(Collision2D other) {
         if((other.gameObject.CompareTag("bigPumpkin"))||(other.gameObject.CompareTag("roundPumpkin"))){
             Debug.Log("VANISH");
