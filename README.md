@@ -9,3 +9,6 @@ The assignment called for a simple implementation of Asteroids....with a creativ
 ## Further Development
 If I was to continue building this game, I would resolve the following bugs:
 - weird asteroid movement
+- witch's hat only spawns into one spot on screen
+- add in a witch's robe and broomstick that must also be acquired to win the game
+- mini ghost on player ghost avatar
